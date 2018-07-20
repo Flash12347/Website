@@ -5,13 +5,13 @@
 </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active" >
-        <a class="nav-link" routerLink="/search">Advisors <span class="sr-only">(current)</span></a>
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/profile">Advisors <span class="sr-only">(current)</span></a>
       <li class="nav-item" >
         <a class="nav-link" routerLink="/search">Scenarios</a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" href="#">Tips and Tutorials</a>
+        <a class="nav-link" routerLink="/tips">Tips and Tutorials</a>
       </li>
 
     </ul>
@@ -25,4 +25,21 @@
   <br><br>
     <p style="text-align:center">Hello, how may we help your child</p>  
   <br><br>
-<input type="text" ng model="searchBox">
+<div style="text-align:center">
+  <input type="text" ng-model="searchbox" style="
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 40%;
+    font-size: 16px;
+    padding: 10px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    border-color: black">
+    <script src="controller.js"></script><ul>
+    <li ng-repeat ="person in person | filter: searchbox">
+      {{ person.Name + ':' + person.age }}
+    </li>
+  </ul>
+    </div>
